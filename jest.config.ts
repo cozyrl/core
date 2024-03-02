@@ -10,7 +10,7 @@ import { Config } from "jest";
 const configuration: Config = {
     transform: { "^.+\\.ts?$": "ts-jest" },
     testRegex: ".*\\.(test|spec)?\\.(ts)$",
-    moduleFileExtensions: [ "ts" ],
+    moduleFileExtensions: [ "ts", "js" ],
     roots: [ "source" ]
 }
 
