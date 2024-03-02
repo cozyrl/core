@@ -1,0 +1,16 @@
+{
+  "name": "@cozyrl/core",
+  "version": "0.1.0",
+  "description": "A versatile npm package designed to serve as the backbone of our application's shared core functionality.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [ "build" ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watchAll --verbose"
+  },
+  "keywords": [ "typescript", "shared", "core" ],
+  "author": "Salem Djekoun",
+  "license": "MIT"
+}
