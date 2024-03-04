@@ -2,15 +2,16 @@
   "name": "@cozyrl/core",
   "version": "0.1.0",
   "description": "A versatile npm package designed to serve as the backbone of our application's shared core functionality.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "files": [
     "build"
   ],
   "scripts": {
     "build": "tsc",
     "test": "jest --passWithNoTests",
-    "test:watch": "jest --watchAll --verbose"
+    "test:watch": "jest --watchAll --verbose",
+    "test:coverage": "jest --passWithNoTests --runInBand --coverage --config=jest.config.with.reporter.ts"
   },
   "keywords": [
     "typescript",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
+    "jest-junit": "^16.0.0",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.2",

@@ -7,3 +7,9 @@ node_modules
 
 # Ignore the build directory
 build
+
+# Ignore JUnit XML files
+**/junit.xml
+
+# Ignore coverage reports
+coverage-reports
