@@ -1,0 +1,28 @@
+
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+version: 2.1
+
+# Define a job to be invoked later in a workflow.
+# Reading 📚: https://circleci.com/docs/jobs-steps/#jobs-overview & https://circleci.com/docs/configuration-reference/#jobs
+jobs:
+  publish:
+    # Specify the Docker image with Node.js environment for running the job.
+    docker:
+      - image: cimg/node:20.5.0
+
+    # Define steps to be executed in the job.
+    steps:
+      - checkout
+      - run:
+          name: Publish to NPM
+          command: echo "Published with success on NPM."
+
+# Orchestrate jobs using workflows.
+# Reading 📚: https://circleci.com/docs/workflows & https://circleci.com/docs/configuration-reference/#workflows
+workflows:
+  tagged-build:
+    jobs:
+      - publish:
+          filters:
+            tags:
+              only: /v[0-9]+(\.[0-9]+)*/

@@ -27,6 +27,13 @@ jobs:
         - checkout
         - continuation/continue:
             configuration_path: .circleci/workflows/continuous-integration.yml
+    - unless:
+        condition:
+          equal: [ main, << pipeline.git.branch >> ]
+        steps:
+        - checkout
+        - continuation/continue:
+            configuration_path: .circleci/workflows/continuous-deployment.yml
 
 # Orchestrate jobs using workflows.
 # Reading 📚: https://circleci.com/docs/workflows & https://circleci.com/docs/configuration-reference/#workflows
